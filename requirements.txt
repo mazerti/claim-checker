@@ -1,0 +1,3 @@
+modal
+newspaper3k
+googlesearch-python
