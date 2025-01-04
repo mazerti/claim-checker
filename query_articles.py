@@ -1,3 +1,4 @@
+from requests.exceptions import HTTPError
 from googlesearch import search
 from newspaper import Article
 from urllib.parse import urlparse
@@ -56,31 +57,30 @@ def fetch_urls_generator(query):
         # Fetch search results using googlesearch
         fetched_sites = set()
         start = 0
-        try:
-            print("query:", query)
-            results = search(
-                query,
-                num_results=10,
-                sleep_interval=int(start / 5),
-                lang="en",
-            )
+        print("query:", query)
+        results = search(
+            query,
+            num_results=10,
+            sleep_interval=int(start / 5),
+            lang="en",
+        )
 
-            # Yield each result
-            for result in results:
-                site = urlparse(result).hostname
-                if site not in fetched_sites:
-                    query += f" -site:{site}"
-                    fetched_sites.add(site)
-                    yield result
+        # Yield each result
+        for result in results:
+            site = urlparse(result).hostname
+            if site not in fetched_sites:
+                query += f" -site:{site}"
+                fetched_sites.add(site)
+                yield result
 
-            # Move to the next batch of results
-            sleep(2.0)
+        # Move to the next batch of results
+        sleep(2.0)
 
-        except Exception as e:
-            print(f"Error occurred during search: {e}")
-            if "429 Client Error: Too Many Requests for" in e:
-                raise RuntimeError("Too many queries. Service is temporary unavailable due to google search restrictions.")
-            break
+        # except HTTPError as e:
+        #     print(f"Error occurred during search: {e}")
+        #     if "429 Client Error: Too Many Requests for" in e:
+        #         raise RuntimeError("Too many queries. Service is temporary unavailable due to google search restrictions.")
+        #     break
 
 
 def scrape_article(url):
