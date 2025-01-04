@@ -130,7 +130,7 @@ def main():
     interface = gr.Interface(
         fn=lambda claim: create_table(verify_claim(claim)),
         inputs=gr.Textbox(label="Enter a Claim"),
-        outputs=gr.HTML(),
+        outputs=gr.HTML(create_table([])),
         title="Claim Verification Tool",
         description="Input a claim to verify whether web sources support, contradict, or remain neutral about it. Results include article links, publishers, comment, and stances.",
     )
