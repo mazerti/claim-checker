@@ -25,9 +25,9 @@ def fetch_urls_generator(query):
             # Yield each result
             for result in results:
                 site = urlparse(result).hostname
-                if result not in fetched_urls:
+                if site not in fetched_urls:
                     query += f" -site:{site}"
-                    fetched_urls.add(result)
+                    fetched_urls.add(site)
                     yield result
 
             # Move to the next batch of results
