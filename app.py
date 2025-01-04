@@ -55,7 +55,7 @@ def verify_claim(claim, num_results=6):
                     "color": color,
                 }
             )
-        print(results)
+        logging.debug(results)
         return results
 
     except Exception as e:

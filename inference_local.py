@@ -1,3 +1,5 @@
+import logging
+
 def inference_prompt(claim, article):
     return f"""You are an impartial evaluator tasked with determining the relationship between a given claim and an article's content. Your job is to analyze the text of the article and assess whether it **agrees**, **disagrees**, is **unrelated**, or if there was an **error** in processing the input. Additionally, provide a single overall comment summarizing your reasoning first, followed by a probability score (0%-100%) for each label.
 
@@ -47,7 +49,7 @@ def load_model():
     dtype = None
     model_name_or_path = "Eugenius0/lora_model_tuned"
 
-    print("Loading model ...")
+    logging.info("Loading model ...")
     time_start = time.time()
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name=model_name_or_path,
@@ -55,7 +57,7 @@ def load_model():
         dtype=dtype,
         load_in_4bit=True,
     )
-    print(f"model loaded in {time.time() - time_start} s")
+    logging.info(f"model loaded in {time.time() - time_start} s")
     FastLanguageModel.for_inference(model)  # Enable native 2x faster inference
     return model, tokenizer
 
@@ -90,7 +92,7 @@ def infer_stance(claim, article, model_tokenizer=None):
         ).to(device)
 
         # Generate response
-        print(f"Analyzing article {title} from {publisher}...")
+        logging.info(f"Analyzing article {title} from {publisher}...")
         time_start = time.time()
         outputs = model.generate(
             input_ids=inputs,
@@ -100,7 +102,7 @@ def infer_stance(claim, article, model_tokenizer=None):
             repetition_penalty=1.1,
             min_p=0.1,
         )
-        print(f"Done in {time.time() - time_start}.")
+        logging.info(f"Done in {time.time() - time_start}.")
         time_start = time.time()
         response = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
         if len(response) > len(prompt):

@@ -55,7 +55,7 @@ ui <-- shaping
 @enduml
 ```
 
-1. First a set of articles are queried from the web using the `googlesearch-python` library. These articles are then parsed using the `newspaper3k` library.
+1. First a set of articles are queried from the web using the [`python-googlesearch`](https://github.com/Animenosekai/googlesearch) library. These articles are then parsed using the [`newspaper3k`](https://github.com/codelucas/newspaper/tree/master) library.
 2. The articles and the claim are given to a Modal function that will form a prompt to ask our LLM to give a comment on how each article relates to the claim.
 The model we use is [Eugenius0/lora_model_tuned](https://huggingface.co/Eugenius0/lora_model) which is the model we fine-tuned for lab 2 on [meta-llama/Llama-3.2-3B-Instruct](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct) using [Unsloth](unsloth.ai) We also use Unsloth to access the model and run it for inference.
 This step is the most computational heavy and require to be run on a GPU. For this, we use [Modal](modal.com) which provide limited free access to a range of GPUs.

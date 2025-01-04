@@ -37,7 +37,6 @@ def parse_result(result_text, error_threshold=5):
     for key, pattern in regex_patterns.items():
         try:
             match = re.search(pattern, result_text, re.IGNORECASE)
-            print(match)
             if match:
                 if key == "comment":
                     parsed_data[key] = match.group(1).strip()
@@ -73,11 +72,11 @@ def get_stance(analyze):
     disagreement = analyze["disagrees"]
     unrelatedness = analyze["unrelated"]
     if agreement == disagreement == unrelatedness == 0:
-        return None, "error"
+        return "error"
     agreement /= agreement + disagreement + unrelatedness
     disagreement /= agreement + disagreement + unrelatedness
     unrelatedness /= agreement + disagreement + unrelatedness
-    if unrelatedness > agreement + disagreement:
+    if unrelatedness > agreement + disagreement + 0.35:
         stance = "unrelated"
     elif abs(agreement - disagreement) < 0.15:
         stance = "nuanced"
