@@ -55,7 +55,7 @@ ui <-- shaping
 @enduml
 ```
 
-1. First a set of articles are queried from the web using the [`python-googlesearch`](https://github.com/Animenosekai/googlesearch) library. These articles are then parsed using the [`newspaper3k`](https://github.com/codelucas/newspaper/tree/master) library.
+1. First a set of articles are queried from the web using the [`googlesearch-python`](https://github.com/Nv7-GitHub/googlesearch) library. These articles are then parsed using the [`newspaper3k`](https://github.com/codelucas/newspaper/tree/master) library.
 2. The articles and the claim are given to a Modal function that will form a prompt to ask our LLM to give a comment on how each article relates to the claim.
 The model we use is [Eugenius0/lora_model_tuned](https://huggingface.co/Eugenius0/lora_model) which is the model we fine-tuned for lab 2 on [meta-llama/Llama-3.2-3B-Instruct](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct) using [Unsloth](unsloth.ai) We also use Unsloth to access the model and run it for inference.
 This step is the most computational heavy and require to be run on a GPU. For this, we use [Modal](modal.com) which provide limited free access to a range of GPUs.
@@ -66,18 +66,20 @@ This object is shaped into a direct stance ("supports", "contradicts", "nuanced"
 ### Run the code locally
 
 If you want to run the app locally, you just have to install the dependencies
-```
+
+```cmd
 pip install -r requirements.txt
 ```
 
 and run the `app.py` file
-```
+
+```cmd
 python3 app.py
 ```
 
-By default, the inference will be handled by Modal. However, if you want to use your local GPU you can easily do so by using the standard python implementation of the inference functions in `inference_local.py`. To do so you must edit the following lines of code:
+By default, the inference will be handled by Modal. However, if you want to use your local GPU you can easily do so by using the standard python implementation of the inference functions in `inference_local.py`. To do so you must edit the following lines of code in `app.py`:
 
-1. In `app.py` comment
+1. Comment
 
 ```python
 import modal # line 9
@@ -91,7 +93,7 @@ batch_infer_stances = modal.Function.lookup( # line 36
 )
 ```
 
-2. Still on `app.py` Uncomment
+2. Uncomment
 
 ``` python
 # from inference_local import batch_infer_stances # line 7
