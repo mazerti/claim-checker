@@ -68,7 +68,7 @@ def parse_result(result_text, error_threshold=5):
 
 def get_stance(analyze):
     if analyze["error_flag"]:
-        return None, "error"
+        return "error"
     agreement = analyze["agrees"]
     disagreement = analyze["disagrees"]
     unrelatedness = analyze["unrelated"]
