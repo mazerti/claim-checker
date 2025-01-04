@@ -78,6 +78,8 @@ def fetch_urls_generator(query):
 
         except Exception as e:
             print(f"Error occurred during search: {e}")
+            if "429 Client Error: Too Many Requests for" in e:
+                raise RuntimeError("Too many queries. Service is temporary unavailable due to google search restrictions.")
             break
 
 
