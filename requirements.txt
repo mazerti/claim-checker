@@ -1,3 +1,4 @@
 modal
 newspaper3k
 googlesearch-python
+lxml[html_clean]
