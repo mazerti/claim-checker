@@ -17,17 +17,23 @@ def fetch_urls_generator(query):
     """
     while True:
         # Fetch search results using googlesearch
-        fetched_urls = set()
+        fetched_sites = set()
+        start = 0
         try:
             logging.info("query:", query)
-            results = search(query, num_results=10, lang="en")
+            results = search(
+                query,
+                num_results=10,
+                sleep_interval=start / 10,
+                lang="en",
+            )
 
             # Yield each result
             for result in results:
                 site = urlparse(result).hostname
-                if site not in fetched_urls:
+                if site not in fetched_sites:
                     query += f" -site:{site}"
-                    fetched_urls.add(site)
+                    fetched_sites.add(site)
                     yield result
 
             # Move to the next batch of results
@@ -56,7 +62,7 @@ def scrape_article(url):
         logging.info(f"Failed to fetch article from {url}: {e}")
 
 
-def query_articles(claim, num_results=3):
+def query_articles(claim, num_articles=3):
     logging.info(f"Fetching URLs for query: {claim}")
 
     # Fetch URLs
@@ -68,7 +74,7 @@ def query_articles(claim, num_results=3):
     for i, url in enumerate(urls_generator):
         if i >= 100:
             break  # safety measure to limit the number of scraped article
-        if len(articles) >= num_results:
+        if len(articles) >= num_articles:
             break
         logging.info(f"\nScraping {url}...")
         article = scrape_article(url)
