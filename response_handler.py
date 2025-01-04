@@ -79,7 +79,7 @@ def get_stance(analyze):
     unrelatedness /= agreement + disagreement + unrelatedness
     if unrelatedness > agreement + disagreement:
         stance = "unrelated"
-    elif abs(agreement - disagreement) < 0.3:
+    elif abs(agreement - disagreement) < 0.15:
         stance = "nuanced"
     elif agreement > disagreement:
         stance = "supports"
