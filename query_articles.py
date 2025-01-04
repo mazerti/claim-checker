@@ -2,7 +2,6 @@ from googlesearch import search
 from newspaper import Article
 from urllib.parse import urlparse
 from time import sleep
-import logging
 
 
 def fetch_urls_generator(query):
@@ -20,7 +19,7 @@ def fetch_urls_generator(query):
         fetched_sites = set()
         start = 0
         try:
-            logging.info("query:", query)
+            print("query:", query)
             results = search(
                 query,
                 num_results=10,
@@ -40,7 +39,7 @@ def fetch_urls_generator(query):
             sleep(2.0)
 
         except Exception as e:
-            logging.error(f"Error occurred during search: {e}")
+            print(f"Error occurred during search: {e}")
             break
 
 
@@ -59,11 +58,11 @@ def scrape_article(url):
             "publisher": publisher,
         }
     except Exception as e:
-        logging.info(f"Failed to fetch article from {url}: {e}")
+        print(f"Failed to fetch article from {url}: {e}")
 
 
 def query_articles(claim, num_articles=3):
-    logging.info(f"Fetching URLs for query: {claim}")
+    print(f"Fetching URLs for query: {claim}")
 
     # Fetch URLs
     query = f'"{claim}" + ("article" OR "news" OR "opinion" OR "editorial") -pdf -site:reddit.com -site:linkedin.com'
@@ -76,13 +75,13 @@ def query_articles(claim, num_articles=3):
             break  # safety measure to limit the number of scraped article
         if len(articles) >= num_articles:
             break
-        logging.info(f"\nScraping {url}...")
+        print(f"\nScraping {url}...")
         article = scrape_article(url)
         if article:
-            logging.info("\nScraped Content (First 500 characters):")
-            logging.info(article["content"][:500])
+            print("\nScraped Content (First 500 characters):")
+            print(article["content"][:500])
             articles.append(article)
         else:
-            logging.info("\nFailed to scrape content.")
+            print("\nFailed to scrape content.")
 
     return articles

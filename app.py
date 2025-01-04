@@ -27,10 +27,10 @@ COLOR_MAP = {
 }
 
 
-def verify_claim(claim, num_results=6):
+def verify_claim(claim, num_articles=6):
     try:
         # articles = [(url, scrape_article(url)) for url in urls]
-        articles = query_articles(claim, num_results)
+        articles = query_articles(claim, num_articles)
         logging.info(f"Scraped {len(articles)} articles.")
 
         batch_infer_stances = modal.Function.lookup(
@@ -55,7 +55,7 @@ def verify_claim(claim, num_results=6):
                     "color": color,
                 }
             )
-        logging.debug(results)
+        print(results)
         return results
 
     except Exception as e:
@@ -116,8 +116,17 @@ def create_table(results):
 
 def main():
     interface = gr.Interface(
-        fn=lambda claim: create_table(verify_claim(claim)),
-        inputs=gr.Textbox(label="Enter a Claim"),
+        fn=lambda claim, num_articles: create_table(verify_claim(claim, num_articles)),
+        inputs=[
+            gr.Textbox(label="Enter a Claim"),
+            gr.Number(
+                label="Number of articles.",
+                value=4,
+                interactive=True,
+                minimum=1,
+                maximum=12,
+            ),
+        ],
         outputs=gr.HTML(),
         title="Claim Verification Tool",
         description="Input a claim to verify whether web sources support, contradict, or remain neutral about it. Results include article links, publishers, comment, and stances.",

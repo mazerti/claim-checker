@@ -15,7 +15,7 @@ If the "An error occurred" label has a probability higher than 5%, it indicates 
 
 ### Instructions:
 1. Carefully read the claim and the article.
-2. Write a **single overall comment** in 10 to 30 words summarizing your evaluation. Include:
+2. Write a **single overall comment** in 10 to 20 words summarizing your evaluation. Include:
    - Key points from the article and their relationship to the claim.
    - A note if an error occurred, such as the article being missing, corrupted, or unrelated to the claim.
 3. Populate the following table of probabilities based on your evaluation:
