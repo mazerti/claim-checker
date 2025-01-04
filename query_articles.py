@@ -65,7 +65,7 @@ def query_articles(claim, num_results=3):
 
     articles = []
 
-    for url, i in enumerate(urls_generator):
+    for i, url in enumerate(urls_generator):
         if i >= 100:
             break  # safety measure to limit the number of scraped article
         if len(articles) >= num_results:
