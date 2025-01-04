@@ -4,6 +4,16 @@ from urllib.parse import urlparse
 from time import sleep
 
 
+ignored_sites = ["reddit.com", "linkedin.com", "facebook.com"]
+
+
+def build_query(claim):
+    query = f'"{claim}" + ("article" OR "news" OR "opinion" OR "editorial") -pdf'
+    for site in ignored_sites:
+        query += " -site:" + site
+    return query
+
+
 def fetch_urls_generator(query):
     """
     A generator function to yield an unlimited number of articles using googlesearch.
@@ -65,7 +75,7 @@ def query_articles(claim, num_articles=3):
     print(f"Fetching URLs for query: {claim}")
 
     # Fetch URLs
-    query = f'"{claim}" + ("article" OR "news" OR "opinion" OR "editorial") -pdf -site:reddit.com -site:linkedin.com'
+    query = build_query(claim)
     urls_generator = fetch_urls_generator(query)
 
     articles = []
