@@ -61,7 +61,7 @@ def fetch_urls_generator(query):
             results = search(
                 query,
                 num_results=10,
-                sleep_interval=start / 10,
+                sleep_interval=int(start / 5),
                 lang="en",
             )
 
