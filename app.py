@@ -123,7 +123,7 @@ def main():
         description="Input a claim to verify whether web sources support, contradict, or remain neutral about it. Results include article links, publishers, comment, and stances.",
     )
 
-    interface.launch(share=True, debug=True)
+    interface.launch(share=True, debug=False)
 
 
 if __name__ == "__main__":
