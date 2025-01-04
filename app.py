@@ -27,7 +27,7 @@ COLOR_MAP = {
 }
 
 
-def verify_claim(claim, num_articles=8):
+def verify_claim(claim, num_articles=6):
     try:
         # articles = [(url, scrape_article(url)) for url in urls]
         articles = query_articles(claim, num_articles)
@@ -101,17 +101,29 @@ def create_table(results):
         </thead>
         <tbody>
     """
-    for result in results:
+    try:
+        for result in results:
+            table_html += f"""
+            <tr style="background-color: {result['color']};">
+                <td><a href="{result['url']}" target="_blank">View Article</a></td>
+                <td>{result['publisher']}</td>
+                <td>{result['comment']}</td>
+                <td>{result['stance']}</td>
+            </tr>
+            """
+        table_html += "</tbody></table>"
+        return table_html
+    except:
         table_html += f"""
-        <tr style="background-color: {result['color']};">
-            <td><a href="{result['url']}" target="_blank">View Article</a></td>
-            <td>{result['publisher']}</td>
-            <td>{result['comment']}</td>
-            <td>{result['stance']}</td>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>{result}</td>
+            <td></td>
         </tr>
         """
-    table_html += "</tbody></table>"
-    return table_html
+        table_html += "</tbody></table>"
+        return table_html
 
 
 def main():
