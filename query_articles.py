@@ -60,7 +60,7 @@ def query_articles(claim, num_results=3):
     logging.info(f"Fetching URLs for query: {claim}")
 
     # Fetch URLs
-    query = f'"{claim}" + ("article" OR "news" OR "opinion" OR "editorial") -pdf -site:reddit.com'
+    query = f'"{claim}" + ("article" OR "news" OR "opinion" OR "editorial") -pdf -site:reddit.com -site:linkedin.com'
     urls_generator = fetch_urls_generator(query)
 
     articles = []
