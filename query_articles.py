@@ -20,7 +20,7 @@ def fetch_urls_generator(query):
         fetched_urls = set()
         try:
             logging.info("query:", query)
-            results = search(query, num_results=2, lang="en")
+            results = search(query, num_results=10, lang="en")
 
             # Yield each result
             for result in results:
