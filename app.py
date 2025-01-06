@@ -27,7 +27,7 @@ COLOR_MAP = {
 }
 
 
-def verify_claim(claim, num_articles=6):
+def verify_claim(claim, num_articles=4):
     try:
         # articles = [(url, scrape_article(url)) for url in urls]
         articles = query_articles(claim, num_articles)
