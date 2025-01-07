@@ -20,6 +20,8 @@ The goal of this app is to help everyone to form its own critical thinking, not 
 
 Go to [https://huggingface.co/spaces/mazerti/claim-checker](https://huggingface.co/spaces/mazerti/claim-checker) and submit a claim to check (for example "ML is easy."). The app usually take about a minute to find all the articles and decides which supports the claim and which contradicts it.
 
+![Screenshot of the app](screenshot.png)
+
 ### How it works
 
 The graph below show what happens when a claim is submitted to the app.
