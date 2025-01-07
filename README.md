@@ -12,6 +12,8 @@ short_description: Helps you decipher whether a claim is true or false.
 
 # Claim Checker
 
+ID2223 Project, Group 6: Titouan Mazier and Eugen Lucchiari Hartz.
+
 #### Find articles to decide if given claim is true or false
 
 The goal of this app is to help everyone to form its own critical thinking, not by offering black or white views about the questioned claims but by presenting the diverse opinions that exists about it on the net as they are, so that the users can make their own opinion and form their media literacy.
