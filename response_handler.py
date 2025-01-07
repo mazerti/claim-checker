@@ -73,9 +73,10 @@ def get_stance(analyze):
     unrelatedness = analyze["unrelated"]
     if agreement == disagreement == unrelatedness == 0:
         return "error"
-    agreement /= agreement + disagreement + unrelatedness
-    disagreement /= agreement + disagreement + unrelatedness
-    unrelatedness /= agreement + disagreement + unrelatedness
+    total = agreement + disagreement + unrelatedness
+    agreement /= total
+    disagreement /= total
+    unrelatedness /= total
     if unrelatedness > agreement + disagreement + 0.35:
         stance = "unrelated"
     elif abs(agreement - disagreement) < 0.15:
