@@ -28,38 +28,7 @@ Go to [https://huggingface.co/spaces/mazerti/claim-checker](https://huggingface.
 
 The graph below show what happens when a claim is submitted to the app.
 
-```plantuml
-@startuml app architecture
-skinparam componentStyle rectangle
-skinparam nodesep 10
-
-' Define main components
-label Claim
-
-label "unsloth zoo" as unsloth
-
-[Query Articles] as query
-[Parse Responses] as parser
-[Stance Shaping] as shaping
-[UI] as ui
-
-package modal {
-    [Stance Inference] as inference
-    [Load Model] as load_model
-}
-
-' Connections between components
-Claim --> query
-Claim -[dashed,norank]-> inference
-query -> inference : articles
-load_model --> inference : model
-unsloth --> load_model
-inference -> parser : responses
-parser -> shaping: status
-ui <-- shaping
-
-@enduml
-```
+![The app architecture.](app_architecture.svg)
 
 1. First a set of articles are queried from the web using the [`googlesearch-python`](https://github.com/Nv7-GitHub/googlesearch) library. These articles are then parsed using the [`newspaper3k`](https://github.com/codelucas/newspaper/tree/master) library.
 2. The articles and the claim are given to a Modal function that will form a prompt to ask our language model to give a comment on how each article relates to the claim.

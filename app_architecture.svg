@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="317px" preserveAspectRatio="none" style="width:699px;height:317px;" version="1.1" viewBox="0 0 699 317" width="699px" zoomAndPan="magnify"><defs><filter height="300%" id="fp3ut8vpiq699" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[ae7c0c508ba4dc81268490f38e9d8ad0]
+cluster modal--><polygon fill="#FFFFFF" filter="url(#fp3ut8vpiq699)" points="158.5,94,208.5,94,215.5,119.0679,324.5,119.0679,324.5,305,158.5,305,158.5,94" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="158.5" x2="215.5" y1="119.0679" y2="119.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="44" x="162.5" y="110.9659">modal</text><!--MD5=[6e7f59b03a4bbdeecb142b2b6cc55314]
+entity inference--><rect fill="#FEFECE" filter="url(#fp3ut8vpiq699)" height="39.0679" style="stroke: #A80036; stroke-width: 1.5;" width="134" x="174.5" y="250"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="169.5" y="255"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="169.5" y="279.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="114" x="184.5" y="274.9659">Stance Inference</text><!--MD5=[2616efb6f9d2a19df0f323a5780f986b]
+entity load_model--><rect fill="#FEFECE" filter="url(#fp3ut8vpiq699)" height="39.0679" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="192.5" y="132"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="187.5" y="137"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="187.5" y="161.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="202.5" y="156.9659">Load Model</text><!--MD5=[35b07627036f410cd6a91e882d4dd43e]
+entity Claim--><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="38" x="44.5" y="156.9659">Claim</text><!--MD5=[60bbd6bef724fe5b0567be87bbf9b418]
+entity unsloth--><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="202.5" y="32.9659">unsloth zoo</text><!--MD5=[a096c1983bcf686c95ea726f28f7a0ed]
+entity query--><rect fill="#FEFECE" filter="url(#fp3ut8vpiq699)" height="39.0679" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="6" y="250"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="1" y="255"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="1" y="279.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="95" x="16" y="274.9659">Query Articles</text><!--MD5=[b3c633cd6cd267e80b8ca5565fbac860]
+entity parser--><rect fill="#FEFECE" filter="url(#fp3ut8vpiq699)" height="39.0679" style="stroke: #A80036; stroke-width: 1.5;" width="133" x="381" y="250"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="376" y="255"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="376" y="279.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="113" x="391" y="274.9659">Parse Responses</text><!--MD5=[cd66a3e106cb741306477b807ffe8191]
+entity shaping--><rect fill="#FEFECE" filter="url(#fp3ut8vpiq699)" height="39.0679" style="stroke: #A80036; stroke-width: 1.5;" width="125" x="563" y="250"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="558" y="255"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="558" y="279.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="573" y="274.9659">Stance Shaping</text><!--MD5=[bf1b4add2ee2e1b53e65912b20fb7ef4]
+entity ui--><rect fill="#FEFECE" filter="url(#fp3ut8vpiq699)" height="39.0679" style="stroke: #A80036; stroke-width: 1.5;" width="35" x="608" y="132"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="603" y="137"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="603" y="161.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="15" x="618" y="156.9659">UI</text><!--MD5=[2a90699010da69c919d65632eca778e9]
+link Claim to query--><path d="M63.5,171.14 C63.5,191.18 63.5,223.09 63.5,244.88 " fill="none" id="Claim-&gt;query" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="63.5,249.91,67.5,240.91,63.5,244.91,59.5,240.91,63.5,249.91" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[093833603314697af36deb1f5d6de065]
+link Claim to inference--><path d="M92.1,171.14 C123.89,191.85 175.14,225.26 208.58,247.05 " fill="none" id="Claim-&gt;inference" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="212.97,249.91,207.602,241.6526,208.7771,247.1861,203.2437,248.3612,212.97,249.91" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1b6e338168c9ffb4a0b5ba1e78929253]
+link query to inference--><path d="M121.29,269.5 C136.52,269.5 153.15,269.5 169.05,269.5 " fill="none" id="query-&gt;inference" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="174.41,269.5,165.41,265.5,169.41,269.5,165.41,273.5,174.41,269.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="42" x="126.75" y="262.397">articles</text><!--MD5=[e0d29658b8fbe1d86288f76bb80a90cc]
+link load_model to inference--><path d="M241.5,171.14 C241.5,191.18 241.5,223.09 241.5,244.88 " fill="none" id="load_model-&gt;inference" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="241.5,249.91,245.5,240.91,241.5,244.91,237.5,240.91,241.5,249.91" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="38" x="242.5" y="215.897">model</text><!--MD5=[6829d21bef07ec84a9e7eafd9410a179]
+link unsloth to load_model--><path d="M241.5,47.03 C241.5,68.35 241.5,103.4 241.5,126.72 " fill="none" id="unsloth-&gt;load_model" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="241.5,131.8,245.5,122.8,241.5,126.8,237.5,122.8,241.5,131.8" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[6d395db0b335ccb480b330f1a2a0a952]
+link inference to parser--><path d="M308.67,269.5 C330.08,269.5 353.85,269.5 375.59,269.5 " fill="none" id="inference-&gt;parser" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="380.78,269.5,371.78,265.5,375.78,269.5,371.78,273.5,380.78,269.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="314.25" y="262.397">responses</text><!--MD5=[6ff541099b0f8f19034860328f19ae24]
+link parser to shaping--><path d="M514.03,269.5 C528.28,269.5 543.35,269.5 557.65,269.5 " fill="none" id="parser-&gt;shaping" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="562.88,269.5,553.88,265.5,557.88,269.5,553.88,273.5,562.88,269.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="37" x="520" y="262.397">status</text><!--MD5=[7e588a77d7e8b8cbfbb626108ebd9ec5]
+reverse link ui to shaping--><path d="M625.5,176.17 C625.5,197.98 625.5,229.89 625.5,249.91 " fill="none" id="ui&lt;-shaping" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="625.5,171.14,621.5,180.14,625.5,176.14,629.5,180.14,625.5,171.14" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[26a75a5c678ff51c981da73a8553b172]
+@startuml app architecture
+skinparam componentStyle rectangle
+skinparam nodesep 10
+
+label Claim
+
+label "unsloth zoo" as unsloth
+
+[Query Articles] as query
+[Parse Responses] as parser
+[Stance Shaping] as shaping
+[UI] as ui
+
+package modal {
+    [Stance Inference] as inference
+    [Load Model] as load_model
+}
+
+Claim - -> query
+Claim -[dashed,norank]-> inference
+query -> inference : articles
+load_model - -> inference : model
+unsloth - -> load_model
+inference -> parser : responses
+parser -> shaping: status
+ui <- - shaping
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 11:22:07 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.5+11-Ubuntu-1ubuntu124.04
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
